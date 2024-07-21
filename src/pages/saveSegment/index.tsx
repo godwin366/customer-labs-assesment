@@ -46,10 +46,10 @@ const SaveSegment: React.FC<IProps> = ({ handleClose }) => {
     { label: "State", value: "state" },
   ], []);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: ISchema) => {
     const manipulatedData = data.schema.map((each: ISchemaValue) => {
       const getFieldLabel = schemaOptions.find(x => x.value === each.value);
-      return { [getFieldLabel?.value || "label"]: getFieldLabel?.label }
+      return { [getFieldLabel?.value as string]: getFieldLabel?.label as string }
     })
     const response = await segmentSave({ ...data, schema: manipulatedData })
     if (response?.data || !response?.error) {
@@ -113,7 +113,7 @@ const SaveSegment: React.FC<IProps> = ({ handleClose }) => {
                     name={`schema.${index}.value`}
                     rules={{
                       validate: {
-                        require: (value) => !value ? "This field is Required or Delete" : true
+                        require: (value) => !value ? "This field is Required or Delete the current field" : true
                       }
                     }}
                     render={({
@@ -138,7 +138,7 @@ const SaveSegment: React.FC<IProps> = ({ handleClose }) => {
                           labelkey="label"
                           valueKey="value"
                           errorMessage={error?.message}
-                          onChange={(e: any) => handleChange(e.target.value)}
+                          onChange={e => handleChange(e.target.value)}
                           value={value}
                           {...rest}
                         />

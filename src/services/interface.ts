@@ -1,4 +1,6 @@
+import { IRecord } from "../utils/interface";
+
 export interface ISegmentData {
    segment_name: string;
-   schema: Record<string, string>
+   schema: IRecord<any>
  }

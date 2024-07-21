@@ -3,11 +3,12 @@ import {
   Select,
   SelectProps,
 } from "@mui/material";
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import "./style.scss";
+import { IRecord } from "../../utils/interface";
 
 type IProps = SelectProps & {
-  options: any[];
+  options: IRecord<any>[];
   label?: string;
   placeHolder?: string;
   labelkey: string;
