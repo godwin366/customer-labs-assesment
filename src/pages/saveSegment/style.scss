@@ -1,0 +1,92 @@
+.edit-agent-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .top-container {
+    .header {
+      display: flex;
+      flex-direction: row;
+      background-color: #39aebc;
+      height: 75px;
+      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+
+      h6 {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .header-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .check-icon {
+          background: #08c5dc;
+          border-radius: 50%;
+          width: 39px;
+          height: 39px;
+          color: #ffff;
+          padding: 8px;
+          cursor: pointer;
+        }
+
+        .close-icon {
+          cursor: pointer;
+          background: #ffff;
+          border-radius: 50%;
+          width: 39px;
+          height: 39px;
+          color: #39aebc;
+          padding: 5px;
+        }
+      }
+    }
+
+    .edit-body {
+      overflow: auto;
+      height: calc(100dvh - 150px);
+      padding: 15px;
+
+      .edit-agent-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .schema-fields {
+          display: flex;
+          gap: 20px;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+
+          .segment-dropdown {
+            width: 100%;
+          }
+        }
+
+        .segment-description{
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .segment-button-container {
+    padding: 20px;
+    display: flex;
+    background-color: #f6f6f6;
+    gap: 10px;
+
+    .segment-submit {
+      width: 150px;
+    }
+    .segment-cancel {
+      width: 100px;
+    }
+  }
+}

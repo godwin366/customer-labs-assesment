@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  height: 100dvh;
+  width: 100%;
+  font-size: 14px;
+}
+.error-msg{
+  font-size: 12px;
+  color: red;
+  padding: 5px 0 0 5px;
+}
