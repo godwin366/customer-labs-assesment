@@ -23,6 +23,7 @@ const InputField = forwardRef<HTMLDivElement, IProps>(({
         {...props}
         variant={variant}
         className={`common-input-field ${className || ""}`}
+        error={!!errorMessage}
       />
       {errorMessage ? <div className="error-msg">{errorMessage}</div> : <></>}
     </div>

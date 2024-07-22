@@ -21,6 +21,13 @@
                 }
             }
         }
+        .Mui-error {
+            &:hover {
+                fieldset {
+                    border-color: #d32f2f !important;
+                }
+            }
+        }
 
         .error-msg {
             color: red;

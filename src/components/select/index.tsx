@@ -41,6 +41,7 @@ const Dropdown = forwardRef<HTMLDivElement, IProps>(({
         className={`common-drop-down ${className || ""}`}
         onChange={onChange}
         value={rest.value || ""}
+        error={!!errorMessage}
         {...rest}
       >
         {options.map((option, index) => (

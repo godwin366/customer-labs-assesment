@@ -54,6 +54,7 @@ const SaveSegment: React.FC<IProps> = ({ handleClose }) => {
     const response = await segmentSave({ ...data, schema: manipulatedData })
     if (response?.data || !response?.error) {
       notifySuccess("Segment saved successfully");
+      handleClose()
       return
     }
     notifyError(response.message);
@@ -150,9 +151,11 @@ const SaveSegment: React.FC<IProps> = ({ handleClose }) => {
                   }} />
                 </div>
               ))}
-              <Link onClick={() => append({ value: "" })}>
-                <div style={{ display: "flex", alignItems: "center" }}><AddIcon fontSize="small" /> Add new schema</div>
-              </Link>
+              {!!(schemaOptions.length > methods.watch("schema").length) &&
+                <Link onClick={() => append({ value: "" })}>
+                  <div style={{ display: "flex", alignItems: "center" }}><AddIcon fontSize="small" /> Add new schema</div>
+                </Link>
+              }
             </form>
           </div>
         </div>
